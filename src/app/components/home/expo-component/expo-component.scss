@@ -1,0 +1,89 @@
+@use 'index' as styles;
+@use '@angular/material' as mat;
+
+.container {
+    width: 100%;
+    height: auto;
+    background: url('/assets/wedding-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 10% 10%;
+    display: flex;
+
+    .expo {
+        margin: 90px auto 60px;
+        width: 80%;
+        
+        .expo-card {
+            background-color: rgba(43, 1, 43, 0.719);
+            text-align: center;
+            color: white;
+            border-radius: 30px;
+
+            @include mat.card-overrides((
+                title-text-size: 38px,
+                subtitle-text-size: 86px,
+                title-text-line-height: 50px,
+                subtitle-text-line-height: 100px,
+                subtitle-text-color: white,
+                title-text-font: "Forum",
+                subtitle-text-font: "Forum"
+            ));
+
+            .header {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .card {
+                padding: 50px 24% 30px;
+
+                .content {
+                    border-radius: 100px;
+                    padding: 1% 15% 1%;
+                    background-color: rgba(255, 255, 255, 0.986);
+                    color: black;
+
+                    .row {
+                        width: 100%;
+                        display: flex;
+                        letter-spacing: 1.5px;
+                        font-weight: 500;
+                        justify-content: center;
+
+                        .details {
+
+                            p {
+                                color: rgb(29, 29, 29);
+                                font-size: 15px;
+                                font-weight: 500;
+                            }
+                        }
+                        
+                        .divider {
+                            width: 1px;
+                            height: auto;
+                            background-color: #b9b9b98a;
+                            margin: 0 10% 0;
+                        }
+
+                        .register {
+                            margin-top: auto;
+                            margin-bottom: auto;
+                            font-size: 19px;
+                            font-weight: 600;
+                            letter-spacing: 1px;
+                            color: styles.$dark-magenta-color;
+                            cursor: pointer;
+
+                            &:hover {
+                                color: styles.$primary-color;
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
