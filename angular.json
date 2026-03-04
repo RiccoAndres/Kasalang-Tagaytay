@@ -36,7 +36,10 @@
               "includePaths": [
                 "src/styles"
               ]
-            }
+            },
+            "polyfills": [
+              "zone.js"
+            ]
           },
           "configurations": {
             "production": {

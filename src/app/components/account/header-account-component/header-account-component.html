@@ -4,13 +4,13 @@
         class="register"
         (click)="openForm()">
             <mat-icon>library_add</mat-icon>
-            REGISTER NOW
+            {{ cmsData?.HeaderRegisterNowLabel }}
         </div>
 
         <div class="booking-look-up">
             <button matButton="outlined">
                 <mat-icon>search</mat-icon>
-                MY RESERVATION
+                {{ cmsData?.HeaderMyReservationLabel }}
             </button>
         </div>
     </div>

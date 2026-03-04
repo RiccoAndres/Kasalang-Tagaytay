@@ -6,10 +6,10 @@ import { FaqComponent } from './components/faq/faq-component/faq-component';
 import { SuppliersComponent } from './components/suppliers/suppliers-component/suppliers-component';
 
 export const routes: Routes = [
-    {path: '', component: HomeComponent},
-    {path: 'about-expo', component: AboutExpoComponent},
-    {path: 'be-part', component: BePartComponent},
-    {path: 'faq', component: FaqComponent},
-    {path: 'suppliers', component: SuppliersComponent},
-    {path: '**', component: HomeComponent}
+    {path: '', component: HomeComponent, data: { animation: 'HomePage' }},
+    {path: 'about-expo', component: AboutExpoComponent, data: { animation: 'AboutExpoPage' }},
+    {path: 'be-part', component: BePartComponent, data: { animation: 'BePartPage' }},
+    {path: 'faq', component: FaqComponent, data: { animation: 'FaqPage' }},
+    {path: 'suppliers', component: SuppliersComponent, data: { animation: 'SupplierPage' }},
+    {path: '**', component: HomeComponent, data: { animation: 'HomePage' }}
 ];

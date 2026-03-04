@@ -1,20 +1,23 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-register-form-component',
   imports: [
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatProgressSpinnerModule
   ],
   templateUrl: './register-form-component.html',
   styleUrl: './register-form-component.scss',
 })
 export class RegisterFormComponent implements OnInit {
   public formUrl!: SafeResourceUrl;
+  public isLoading: boolean = true;
 
   constructor (
     private readonly sanitizer: DomSanitizer,
@@ -28,5 +31,9 @@ export class RegisterFormComponent implements OnInit {
 
   public close() {
     this.dialogRef.close();
+  }
+
+  public onLoad() {
+    this.isLoading = false;
   }
 }

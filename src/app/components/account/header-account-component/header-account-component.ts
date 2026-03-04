@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RegisterFormComponent } from '../register-form-component/register-form-component';
 import { MatDialog } from '@angular/material/dialog';
+import { CmsHeaderComponentsData } from '../../../models/header/cms-header-components.model';
 
 @Component({
   selector: 'app-header-account-component',
@@ -14,6 +15,8 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrl: './header-account-component.scss',
 })
 export class HeaderAccountComponent {
+
+  @Input() public cmsData: CmsHeaderComponentsData | null = null;
 
   constructor (
     private readonly dialog: MatDialog

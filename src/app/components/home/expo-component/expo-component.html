@@ -2,17 +2,17 @@
     <div class="expo">
         <mat-card class="expo-card">
             <mat-card-header class="header">
-                <mat-card-title>The Grandest Wedding</mat-card-title>
-                <mat-card-title>Venues & Suppliers Expo in the South</mat-card-title>
-                <mat-card-subtitle>Kasalang Tagaytay Expo</mat-card-subtitle>
+                <mat-card-title> {{ cmsData?.ExpoSubtitle1 }} </mat-card-title>
+                <mat-card-title>{{ cmsData?.ExpoSubtitle2 }}</mat-card-title>
+                <mat-card-subtitle>{{ cmsData?.ExpoTitle }}</mat-card-subtitle>
             </mat-card-header>
             <mat-card-content class="card">
                 <div class="content">
                     <div class="row">
                         <div class="details">
-                            <p>February 28, 2026 – March 1, 2026</p>
-                            <p>Sat-Sun from 10am to 8pm</p>
-                            <p>Taal Vista Hotel Grand Ballroom</p>
+                            <p>{{ cmsData?.ExpoEventDateStart }} – {{ cmsData?.ExpoEventDateEnd }}</p>
+                            <p>{{ cmsData?.ExpoEventDateStartTime }} to {{ cmsData?.ExpoEventDateEndTime }}</p>
+                            <p>{{ cmsData?.ExpoLocation }}</p>
                         </div>
 
                         <div class="divider"></div>
@@ -21,11 +21,12 @@
                         class="register"
                         (click)="openForm()">
                             <mat-icon>library_add</mat-icon>
-                            REGISTER NOW
+                            {{ cmsData?.ExpoRegisterNow }}
                         </div>
                     </div>
                 </div>
             </mat-card-content>
         </mat-card>
     </div>
+    <app-loader-component *ngIf="isLoading"></app-loader-component>
 </div>

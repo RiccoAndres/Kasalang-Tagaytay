@@ -9,6 +9,7 @@
     background-repeat: no-repeat;
     background-position: 10% 10%;
     display: flex;
+    position: relative;
 
     .expo {
         margin: 90px auto 60px;
@@ -36,18 +37,21 @@
             }
 
             .card {
-                padding: 50px 24% 30px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 50px 0 30px;
+                width: auto;
 
                 .content {
-                    border-radius: 100px;
-                    padding: 1% 15% 1%;
+                    border-radius: 60px;
+                    padding: 5px 50px 5px;
                     background-color: rgba(255, 255, 255, 0.986);
                     color: black;
 
                     .row {
                         width: 100%;
                         display: flex;
-                        letter-spacing: 1.5px;
+                        letter-spacing: 1px;
                         font-weight: 500;
                         justify-content: center;
 
@@ -55,7 +59,7 @@
 
                             p {
                                 color: rgb(29, 29, 29);
-                                font-size: 15px;
+                                font-size: 13px;
                                 font-weight: 500;
                             }
                         }
@@ -63,14 +67,14 @@
                         .divider {
                             width: 1px;
                             height: auto;
-                            background-color: #b9b9b98a;
-                            margin: 0 10% 0;
+                            background-color: #b9b9b975;
+                            margin: 0 50px 0;
                         }
 
                         .register {
                             margin-top: auto;
                             margin-bottom: auto;
-                            font-size: 19px;
+                            font-size: 16px;
                             font-weight: 600;
                             letter-spacing: 1px;
                             color: styles.$dark-magenta-color;
@@ -79,6 +83,53 @@
                             &:hover {
                                 color: styles.$primary-color;
                                 font-weight: 700;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .container {
+        .expo {
+            .expo-card {
+                @include mat.card-overrides((
+                    title-text-size: 25px,
+                    subtitle-text-size: 50px,
+                    title-text-line-height: 40px,
+                    subtitle-text-line-height: 60px,
+                    subtitle-text-color: white,
+                    title-text-font: "Forum",
+                    subtitle-text-font: "Forum"
+                ));
+
+                .card {
+
+                    .content {
+                        border-radius: 35px;
+                        padding: 5px 20px 5px;
+                        .row {
+                            display: flex;
+                            flex-direction: column;
+                            .details {
+
+                                p {
+                                    
+                                }
+                            }
+                            
+                            .divider {
+                                width: 100%;
+                                height: 1px;
+                                background-color: #b9b9b98a;
+                                margin: 10px auto 30px;
+                            }
+
+                            .register {
+                                margin: 0 0 20px;
                             }
                         }
                     }
