@@ -73,8 +73,12 @@ export class NavigationComponent implements OnDestroy, OnChanges {
   }
 
   private loadCurrentSelectedTabOnRefresh(): void {
-    const currentTabUrl: string = globalThis.location.pathname.split('/')[1];
-    const currentTabName: string = this.navigationTabs.find(tab => tab.tabPathUrl.includes(currentTabUrl))?.tabName ?? '';
+    const currentTabUrl: string = globalThis.location.pathname;
+    const currentTabName: string = this.navigationTabs.find(tab => {
+      const currentTabPath: string = tab.tabPathUrl.split("/")[1];
+      return currentTabUrl.includes(currentTabPath) && currentTabPath !== '';
+    })?.tabName ?? '';
+    
     if (currentTabName === '') {
       this.navigatePage(this.navigationTabs[0]);
       this.selectedTab = this.navigationTabs[0].tabName;
